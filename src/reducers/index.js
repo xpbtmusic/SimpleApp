@@ -3,6 +3,8 @@ import { NavigationActions } from 'react-navigation';
 
 import { AppNavigator } from '../navigators/AppNavigator';
 
+import login from './login'
+
 // Start with two routes: The Main screen, with the Login screen on top.
 const firstAction = AppNavigator.router.getActionForPathAndParams('Main');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
@@ -52,6 +54,7 @@ function auth(state = initialAuthState, action) {
 const AppReducer = combineReducers({
   nav,
   auth,
+    userStore:login,
 });
 
 export default AppReducer;
